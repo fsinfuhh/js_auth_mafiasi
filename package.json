@@ -1,0 +1,36 @@
+{
+  "name": "@fsinfuhh/js_auth_mafiasi",
+  "description": "JavaScript authentication library for working with Mafiasi",
+  "license": "MIT",
+  "version": "1.0.0-rc1",
+  "repository": "git://github.com/fsinfuhh/js_auth_mafiasi.git",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "author": {
+    "name": "Finn-Thorben Sell",
+    "email": "dev@finn-thorben.me",
+    "url": "https://finn-thorben.me"
+  },
+  "maintainers": [
+    {
+      "name": "Server-AG",
+      "email": "ag-server@informatik.uni-hamburg.de"
+    }
+  ],
+  "scripts": {
+    "compile": "tsc -p .",
+    "prepare": "yarn run compile"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "dependencies": {
+    "@openid/appauth": "^1.3.0",
+    "jwt-js": "^0.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.25",
+    "eslint": "^7.19.0",
+    "typescript": "^4.1.3"
+  }
+}
