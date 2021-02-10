@@ -108,7 +108,7 @@ export async function isAuthenticated(): Promise<boolean> {
  *  At this location {@link doAuthorizationCallback} should be called so that the result can be properly handled.
  * @param openidConfig An optional configuration which overrides {@link DEFAULT_OPENID_CONFIG} if supplied.
  */
-export async function doAuthorization(callbackUri: string, openidConfig?: OpenidConfig) {
+export async function doAuthorization(callbackUri: string, openidConfig?: OpenidConfig): Promise<void> {
     if (openidConfig == null) {
         openidConfig = DEFAULT_OPENID_CONFIG
     }
@@ -132,7 +132,7 @@ export async function doAuthorization(callbackUri: string, openidConfig?: Openid
  *  <br/>
  *  This **must** be the same as the one passed to {@link doAuthorization} or otherwise, the authorization will fail.
  */
-export async function doAuthorizationCallback(openidConfig?: OpenidConfig) {
+export async function doAuthorizationCallback(openidConfig?: OpenidConfig): Promise<void> {
     if (openidConfig == null) {
         openidConfig = DEFAULT_OPENID_CONFIG
     }
@@ -177,7 +177,7 @@ async function exchangeCodeForTokens(code: string, authorizationRequest: Authori
     const tokenHandler = new BaseTokenRequestHandler(new FetchRequestor())
 
     // if PKCE extension is used, we need to send the code_verifier along in the TokenRequest
-    let extras = {} as Record<string, string>
+    const extras = {} as Record<string, string>
     if (authorizationRequest.internal != null && authorizationRequest.internal["code_verifier"] != null) {
         extras["code_verifier"] = authorizationRequest.internal["code_verifier"]
     }
