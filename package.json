@@ -2,7 +2,7 @@
   "name": "@fsinfuhh/js_auth_mafiasi",
   "description": "JavaScript authentication library for working with Mafiasi",
   "license": "MIT",
-  "version": "1.0.0-rc2",
+  "version": "1.0.0",
   "repository": "git://github.com/fsinfuhh/js_auth_mafiasi.git",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
