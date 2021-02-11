@@ -22,7 +22,7 @@
     "compile": "tsc -p .",
     "lint": "eslint --max-warnings 0 --fix .",
     "test": "jest",
-    "prepare": "yarn run lint && yarn run compile"
+    "prepare": "npm run lint && npm run compile"
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
